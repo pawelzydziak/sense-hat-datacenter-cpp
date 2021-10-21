@@ -1,0 +1,3 @@
+/mnt/c/Users/darlo/CLionProjects/pi-test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/darlo/CLionProjects/pi-test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/darlo/CLionProjects/pi-test/cmake-build-debug/CMakeFiles/sensehat_datacentre.dir

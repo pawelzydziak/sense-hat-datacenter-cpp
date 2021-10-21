@@ -1,0 +1,3 @@
+/home/pi/tmp/tmp.LZ3Y8x13AT/cmake-build-debug-raspi3-wifi/CMakeFiles/rebuild_cache.dir
+/home/pi/tmp/tmp.LZ3Y8x13AT/cmake-build-debug-raspi3-wifi/CMakeFiles/sensehat_datacentre.dir
+/home/pi/tmp/tmp.LZ3Y8x13AT/cmake-build-debug-raspi3-wifi/CMakeFiles/edit_cache.dir

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/darlo/CLionProjects/pi-test/include/I2CClient.h
+fcntl.h
+-
+linux/i2c-dev.h
+-
+errno.h
+-
+memory
+-
+
+/mnt/c/Users/darlo/CLionProjects/pi-test/main.cpp
+iostream
+-
+include/I2CClient.h
+/mnt/c/Users/darlo/CLionProjects/pi-test/include/I2CClient.h
+
+/mnt/c/Users/darlo/CLionProjects/pi-test/src/I2CClient.cpp
+../include/I2CClient.h
+/mnt/c/Users/darlo/CLionProjects/pi-test/include/I2CClient.h
+
