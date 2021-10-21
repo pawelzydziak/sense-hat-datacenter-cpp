@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/sensehat_datacentre.dir/main.cpp.o CMakeFiles/sensehat_datacentre.dir/src/I2CClient.cpp.o  -o sensehat_datacentre 

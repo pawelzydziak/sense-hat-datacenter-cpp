@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/pi_test.dir/main.cpp.o  -o pi_test 
