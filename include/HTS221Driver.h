@@ -11,23 +11,20 @@ static constexpr auto HTS221_DEVICE_ADDRESS = 0x5F;
 class HTS221Driver
 {
 public:
-    HTS221Driver(int fd) : device(fd) {};
-    virtual ~HTS221Driver() = default;
+	HTS221Driver(int fd) : device(fd){};
 
-    void calibrate();
+	virtual ~HTS221Driver() = default;
 
-    double getHumidity();
-    double getTemperature();
+	void calibrate();
+	static double CPUTempCorrection(double temp);
 
-//    void setAverageHumiditySamples(HTS221AverageHumiditySamples_t averageHumiditySamples);
-//    void setAverageTemperatureSamples(HTS221AverageTemperatureSamples_t averageTemperatureSamples);
-//    void setDataRate(HTS221DataRate_t dataRate);
-//
-//    void triggerMeasurement();
+	double getHumidity();
+
+	double getTemperature();
 
 public:
-    int device;
-    int H0_RH_X2, H1_RH_X2, T0_DEGC_X8, T1_DEGC_X8, T1_T0_MSB, H0_T0, H1_T0, T0_OUT, T1_OUT;
+	int device;
+	int H0_RH_X2, H1_RH_X2, T0_DEGC_X8, T1_DEGC_X8, T1_T0_MSB, H0_T0, H1_T0, T0_OUT, T1_OUT;
 };
 
 
