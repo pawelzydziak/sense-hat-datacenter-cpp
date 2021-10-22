@@ -3,4 +3,5 @@ project(sensehat_datacentre)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(sensehat_datacentre main.cpp src/I2CClient.cpp include/I2CClient.h src/I2CClient.cpp include/I2CClient.h)
+add_executable(sensehat_datacentre main.cpp include/senseHat.h src/HTS221Driver.cpp include/HTS221Driver.h include/registers.h)
+target_link_libraries(${PROJECT_NAME} wiringPi)
