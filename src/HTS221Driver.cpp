@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <fstream>
 
-void HTS221Driver::calibrate ()
+void HTS221Driver::calibrate()
 {
 	int data;
 
@@ -73,7 +73,7 @@ void HTS221Driver::calibrate ()
 	}
 }
 
-double HTS221Driver::getTemperature ()
+double HTS221Driver::getTemperature() const
 {
 	int32_t data = 0;
 	int32_t temperature = 0;
@@ -89,16 +89,17 @@ double HTS221Driver::getTemperature ()
 	return T0_DEGC_X8 / 8.0 + (temperature - T0_OUT) * (T1_DEGC_X8 - T0_DEGC_X8) / 8.0 / (T1_OUT - T0_OUT); //to calibrate with cpu temp, but for now very strange values
 }
 
-double HTS221Driver::getHumidity ()
+double HTS221Driver::getHumidity() const
 {
 	int32_t data = 0;
 	int32_t humidity = 0;
 
 	data = wiringPiI2CReadReg8(device, HTS221_REGISTER_STATUS_REG);
 
-	if (!(data & 0b10)) {
-		throw std::runtime_error("The humidity sensor is not ready.");
-	}
+//	if (!(data & 0b10))
+//	{
+//		throw std::runtime_error("The humidity sensor is not ready.");
+//	}
 
 	data = wiringPiI2CReadReg8(device, HTS221_REGISTER_HUMIDITY_OUT_L);
 	humidity = data;
@@ -106,7 +107,8 @@ double HTS221Driver::getHumidity ()
 	data = wiringPiI2CReadReg8(device, HTS221_REGISTER_HUMIDITY_OUT_H);
 	humidity |= data << 8;
 
-	if (humidity > 32768) {
+	if (humidity > 32768)
+	{
 		humidity -= 65536;
 	}
 
@@ -119,7 +121,7 @@ double HTS221Driver::CPUTempCorrection(double temp)
 	std::string preparedTemp;
 	float cpuTemperature;
 
-	std::ifstream temperatureFile ("/sys/class/thermal/thermal_zone0/temp");
+	std::ifstream temperatureFile("/sys/class/thermal/thermal_zone0/temp");
 
 	temperatureFile >> val;
 	temperatureFile.close();
